@@ -39,7 +39,7 @@ jobs:
       run: |
         set -x
         tag=1 #1
-        version=$(grep -o "Virtual Volumes View:.*" README.md | cut -d ' ' -f2)
+        version=$(grep -o "Virtual Volumes View:.*" README.md | cut -d ' ' -f4)
         echo "Virtual Volumes View version: $version - Tag: $tag"
 
         cp README.md squashfs-root/
@@ -60,9 +60,9 @@ jobs:
         #sed -i 's/.wine-appimage-stable/.config\/Deffy_AppImage/g' wrapper # Change config folder
 
         # Remove 32 bits
-        cd opt/wine-stable/lib/wine/
-        rm -r i386-windows/
-        cd ../../../../
+        #cd opt/wine-stable/lib/wine/
+        #rm -r i386-windows/
+        #cd ../../../../
 
         echo '#!/bin/bash
         HERE=$(cd "${0%/*}" && echo $PWD)
@@ -93,4 +93,4 @@ jobs:
         #overwrite: true
         verbose: true
         draft: false
-        default_release_name: "Deffy V in AppImage"
+        default_release_name: "Virtual_Volumes_View V in AppImage"
