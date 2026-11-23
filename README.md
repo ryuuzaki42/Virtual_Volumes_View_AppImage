@@ -1,14 +1,14 @@
 
-# Deffy_AppImage
+# Virtual_Volumes_View_AppImage
 
- - Deffy + Wine
+ - Virtual Volumes View + Wine
 
-Deffy converts DFF files (either containing DSD or DST) to DSF files or converts DSF files to DFF files
+Catalog the content of removable volumes like CD and DVD disks for off-line searching. Folders and files can also be arranged in a single, virtual file system. Each folder of this virtual file system can contain files from many disks
 
-https://www.mymymyohmy.com/software/deffy.html
+https://sourceforge.net/projects/vvvapp/
 
-## Repository: https://github.com/ryuuzaki42/Deffy_AppImage
-    Deffy: 6.1.0
+## Repository: https://github.com/ryuuzaki42/Virtual_Volumes_View_AppImage
+    Virtual Volumes View: 1.5
 
 ---
 ## Using Wine in AppImage from https://github.com/mmtrt/WINE_AppImage - Stable
@@ -28,4 +28,4 @@ https://www.mymymyohmy.com/software/deffy.html
     rm -r /dev/shm/$folder_name_RAM/
 
 ---
-https://www.mymymyohmy.com/software/deffy.html#download
+https://sourceforge.net/projects/vvvapp/files/VVV/
