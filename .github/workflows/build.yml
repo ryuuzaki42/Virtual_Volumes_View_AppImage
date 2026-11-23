@@ -39,16 +39,21 @@ jobs:
       run: |
         set -x
         tag=1 #1
-        version=$(grep -o "Deffy:.*" README.md | cut -d ' ' -f2)
-        echo "Deffy version: $version - Tag: $tag"
+        version=$(grep -o "Virtual Volumes View:.*" README.md | cut -d ' ' -f2)
+        echo "Virtual Volumes View version: $version - Tag: $tag"
 
         cp README.md squashfs-root/
         cd AppDir/
 
         wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/6.0.0_0_exe/Deffy.desktop
         wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/6.0.0_0_exe/Deffy.png
-        wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/${version}_0_exe/Deffy.exe
-        wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/${version}_0_exe/libwavpack-1.dll
+        #wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/${version}_0_exe/Deffy.exe
+        #wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/${version}_0_exe/libwavpack-1.dll
+
+        wget -q https://github.com/ryuuzaki42/Virtual_Volumes_View_AppImage/releases/download/1.5.0_0_exe/VVV.zip
+        unzip VVV.zip
+        rm VVV.zip
+
         pwd; ls -lah
         rm .DirIcon wine.svg org.winehq.wine.desktop
 
@@ -64,9 +69,9 @@ jobs:
         echo '#!/bin/bash
         HERE=$(cd "${0%/*}" && echo $PWD)
 
-        folder_name_RAM="Deffy_AppImage_$(date +%d_%m_%Y)"
+        folder_name_RAM="Virtual_Volumes_View_AppImage_$(date +%d_%m_%Y)"
         mkdir -p /dev/shm/$folder_name_RAM/
-        WINEDLLOVERRIDES="mscoree=d;mshtml=d" WINEPREFIX=/dev/shm/$folder_name_RAM "$HERE"/AppRun_2 "$HERE"/Deffy.exe
+        WINEDLLOVERRIDES="mscoree=d;mshtml=d" WINEPREFIX=/dev/shm/$folder_name_RAM "$HERE"/AppRun_2 "$HERE"/VVV/vvv.exe
         rm -r /dev/shm/$folder_name_RAM/' > AppRun
         chmod +x AppRun
 
@@ -77,7 +82,7 @@ jobs:
     - name: Generate MD5
       run: |
         set -x
-        fileName=$(ls Deffy*.AppImage)
+        fileName=$(ls Virtual_Volumes_View*.AppImage)
         echo "fileName: $fileName"
         md5sum "${fileName}" > "${fileName}".md5
         pwd; ls -lah
@@ -86,7 +91,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        file: "Deffy*.AppImage; Deffy*.zsync; Deffy*.md5"
+        file: "Virtual_Volumes_View*.AppImage; Virtual_Volumes_View*.zsync; Virtual_Volumes_View*.md5"
         #overwrite: true
         verbose: true
         draft: false
