@@ -45,7 +45,9 @@ jobs:
         cp README.md squashfs-root/
         cd AppDir/
 
-        wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/6.0.0_0_exe/Deffy.desktop
+        #wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/6.0.0_0_exe/Deffy.desktop
+        wget -q https://github.com/ryuuzaki42/Virtual_Volumes_View_AppImage/releases/download/1.5.0_0_exe/Virtual_Volumes_View.desktop
+        
         wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/6.0.0_0_exe/Deffy.png
         #wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/${version}_0_exe/Deffy.exe
         #wget -q https://github.com/ryuuzaki42/Deffy_AppImage/releases/download/${version}_0_exe/libwavpack-1.dll
