@@ -45,10 +45,10 @@ jobs:
         cp README.md squashfs-root/
         cd AppDir/
 
-        wget -q https://github.com/ryuuzaki42/Virtual_Volumes_View_AppImage/releases/download/1.5.0_0_exe/vvv.desktop
-        wget -q https://github.com/ryuuzaki42/Virtual_Volumes_View_AppImage/releases/download/1.5.0_0_exe/vvv.png
+        wget -q https://github.com/ryuuzaki42/Virtual_Volumes_View_AppImage/releases/download/1.5_0_exe/vvv.desktop
+        wget -q https://github.com/ryuuzaki42/Virtual_Volumes_View_AppImage/releases/download/1.5_0_exe/vvv.png
 
-        wget -q https://github.com/ryuuzaki42/Virtual_Volumes_View_AppImage/releases/download/1.5.0_0_exe/VVV.zip
+        wget -q https://github.com/ryuuzaki42/Virtual_Volumes_View_AppImage/releases/download/1.5_0_exe/vvv.desktop
         unzip VVV.zip
         rm VVV.zip
 
