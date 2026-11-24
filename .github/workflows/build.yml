@@ -57,12 +57,13 @@ jobs:
 
         mv AppRun AppRun_2
         mv AppRun.env AppRun_2.env
-        #sed -i 's/.wine-appimage-stable/.config\/Deffy_AppImage/g' wrapper # Change config folder
+        #sed -i 's/.wine-appimage-stable/.config\/Virtual_Volumes_View_AppImage/g' wrapper # Change config folder
 
         # Remove 32 bits
-        #cd opt/wine-stable/lib/wine/
+        cd opt/wine-stable/lib/wine/
         #rm -r i386-windows/
-        #cd ../../../../
+        rm -r x86_64-windows/
+        cd ../../../../
 
         echo '#!/bin/bash
         HERE=$(cd "${0%/*}" && echo $PWD)
