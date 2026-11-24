@@ -26,7 +26,7 @@ jobs:
         chmod +x appimagetool-x86_64.AppImage
         pwd; ls -lah
 
-    - name: Get wine AppImage
+    - name: Get WINE AppImage
       run: |
         set -x
         wget -q https://github.com/mmtrt/WINE_AppImage/releases/download/continuous-stable/wine-stable_11.0-x86_64.AppImage
@@ -60,10 +60,9 @@ jobs:
         #sed -i 's/.wine-appimage-stable/.config\/Virtual_Volumes_View_AppImage/g' wrapper # Change config folder
 
         # Remove 32 bits
-        cd opt/wine-stable/lib/wine/
+        #cd opt/wine-stable/lib/wine/
         #rm -r i386-windows/
-        rm -r x86_64-windows/
-        cd ../../../../
+        #cd ../../../../
 
         echo '#!/bin/bash
         HERE=$(cd "${0%/*}" && echo $PWD)
